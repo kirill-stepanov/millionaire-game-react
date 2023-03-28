@@ -25,7 +25,7 @@ const Game = () => {
   const [totalPrize, setTotalPrize] = useState(0);
 
   useEffect(() => {
-    setCurrentQuestionId(questions[0].id);
+    !currentQuestionId && setCurrentQuestionId(questions[0].id);
   }, []);
 
   useEffect(() => {
@@ -48,7 +48,7 @@ const Game = () => {
 
   const nextQuestion = () => {
     question && setTotalPrize(question.prize);
-    if (currentQuestionId === questions.at(0)?.id) {
+    if (currentQuestionId === questions[questions.length - 1]?.id) {
       navigate(LINKS.FINISH, {
         state: {
           prize: question?.prize,
@@ -94,7 +94,7 @@ const Game = () => {
         <>
           <ProgressBarMobile
             currentQuestionId={currentQuestionId}
-            questions={questions.sort((a, b) => b.prize - a.prize)}
+            questions={questions}
           />
 
           <div className="question__container">
@@ -132,7 +132,7 @@ const Game = () => {
 
           <ProgressBar
             currentQuestionId={currentQuestionId}
-            questions={questions.sort((a, b) => b.prize - a.prize)}
+            questions={questions}
           />
         </>
       ) : (

@@ -25,22 +25,25 @@ function ProgressBar(props: ProgressBarProps) {
 
   return (
     <div className="prize__container">
-      {questions.map((question) => (
-        <div
-          key={question.id}
-          className={`prize__button${getClassName(question.id)}`}
-        >
-          {question.id === currentQuestionId ? (
-            <PrizeButtonActiveIcon />
-          ) : (
-            <PrizeButtonIcon />
-          )}
+      {questions
+        .slice(0)
+        .reverse()
+        .map((question) => (
+          <div
+            key={question.id}
+            className={`prize__button${getClassName(question.id)}`}
+          >
+            {question.id === currentQuestionId ? (
+              <PrizeButtonActiveIcon />
+            ) : (
+              <PrizeButtonIcon />
+            )}
 
-          <span className="prize__button__text">
-            {getFormattedNumber(question.prize)}
-          </span>
-        </div>
-      ))}
+            <span className="prize__button__text">
+              {getFormattedNumber(question.prize)}
+            </span>
+          </div>
+        ))}
     </div>
   );
 }

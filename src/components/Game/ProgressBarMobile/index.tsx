@@ -40,30 +40,33 @@ function ProgressBarMobile(props: ProgressBarMobileProps) {
 
       {isProgressBarActive && (
         <div className="prize__container__mobile">
-          {questions.map((question) => (
-            <div
-              key={question.id}
-              className={`prize__button${getClassName(question.id)}`}
-            >
-              {question.id === currentQuestionId ? (
-                <>
-                  <div className="prize__button__line--active" />
-                  <PrizeButtonActiveIcon />
-                  <div className="prize__button__line--active" />
-                </>
-              ) : (
-                <>
-                  <div className="prize__button__line" />
-                  <PrizeButtonIcon />
-                  <div className="prize__button__line" />
-                </>
-              )}
+          {questions
+            .slice(0)
+            .reverse()
+            .map((question) => (
+              <div
+                key={question.id}
+                className={`prize__button${getClassName(question.id)}`}
+              >
+                {question.id === currentQuestionId ? (
+                  <>
+                    <div className="prize__button__line--active" />
+                    <PrizeButtonActiveIcon />
+                    <div className="prize__button__line--active" />
+                  </>
+                ) : (
+                  <>
+                    <div className="prize__button__line" />
+                    <PrizeButtonIcon />
+                    <div className="prize__button__line" />
+                  </>
+                )}
 
-              <span className="prize__button__text">
-                {getFormattedNumber(question.prize)}
-              </span>
-            </div>
-          ))}
+                <span className="prize__button__text">
+                  {getFormattedNumber(question.prize)}
+                </span>
+              </div>
+            ))}
         </div>
       )}
     </>
