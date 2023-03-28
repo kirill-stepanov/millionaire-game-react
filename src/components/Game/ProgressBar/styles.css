@@ -1,0 +1,77 @@
+.prize__container {
+  width: 100%;
+  max-width: 376px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prize__button--next,
+.prize__button--previous,
+.prize__button--active {
+  position: relative;
+}
+
+.prize__button--next .prize__button__text {
+  color: #1c1c21;
+}
+
+.prize__button--previous .prize__button__text {
+  color: #d0d0d8;
+}
+
+.prize__button--active .prize__button__text {
+  color: #fdeeed;
+}
+
+.prize__button::before,
+.prize__button--next::before,
+.prize__button--previous::before,
+.prize__button--active::before {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 69px;
+  background: #d0d0d8;
+  bottom: calc(50% - 1px);
+  left: -68px;
+  position: absolute;
+}
+
+.prize__button--active::before {
+  background: #3891b1;
+}
+
+.prize__button::after,
+.prize__button--next::after,
+.prize__button--previous::after,
+.prize__button--active::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 69px;
+  background: #d0d0d8;
+  bottom: calc(50% - 1px);
+  right: -68px;
+  position: absolute;
+}
+
+.prize__button--active::after {
+  background: #3891b1;
+}
+
+.prize__button__text {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 116%;
+}

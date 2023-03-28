@@ -1,0 +1,33 @@
+.button__primary {
+  background: #1e6a8e;
+  border: none;
+  border-radius: 12px;
+  min-height: 64px;
+  width: 100%;
+  max-width: 280px;
+  padding: 0 24px;
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 116%;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.1s ease-out;
+}
+
+.button__primary:hover {
+  background: #3891b1;
+}
+
+.button__primary:active {
+  background: #003b63;
+}
+
+@media only screen and (max-width: 1024px) {
+  .button__primary {
+    min-width: 100%;
+    min-height: 48px;
+    font-size: 14px;
+    line-height: 116%;
+  }
+}

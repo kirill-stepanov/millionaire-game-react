@@ -1,0 +1,173 @@
+.option__button,
+.option__button--selected {
+  border: none;
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.option__button svg,
+.option__button--selected svg {
+  z-index: 1;
+}
+
+.option__button--selected path {
+  fill: #fff3eb;
+  stroke: #ff8b37;
+}
+
+.option__button--wrong path {
+  fill: #fdeeed;
+  stroke: #ec6259;
+}
+
+.option__button--correct path {
+  fill: #e6faea;
+  stroke: #47d867;
+}
+
+.option__button:nth-child(odd),
+.option__button--selected:nth-child(odd) {
+  margin-left: 32px;
+}
+
+.option__text {
+  position: absolute;
+  left: 32px;
+  z-index: 1;
+}
+
+.option__letter {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 116%;
+  color: #004974;
+  margin-right: 8px;
+}
+
+.option__answer {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 116%;
+  color: #3891b1;
+  text-align: left;
+}
+
+.option__button::before,
+.option__button--selected::before {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 25px;
+  bottom: calc(50% + -1px);
+  left: -24px;
+  position: absolute;
+}
+
+.option__button::before {
+  background: #d0d0d8;
+}
+
+.option__button--selected::before {
+  background: #ff8b37;
+}
+
+.option__button--correct::before {
+  background: #47d867;
+}
+
+.option__button--wrong::before {
+  background: #ec6259;
+}
+
+.option__button::after,
+.option__button--selected::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 25px;
+  bottom: calc(50% + -1px);
+  right: -24px;
+  position: absolute;
+}
+
+.option__button::after {
+  background: #d0d0d8;
+}
+
+.option__button--selected::after {
+  background: #ff8b37;
+}
+
+.option__button--correct::after {
+  background: #47d867;
+}
+
+.option__button--wrong::after {
+  background: #ec6259;
+}
+
+@media only screen and (min-width: 1180px) {
+  .option__button:hover path,
+  .option__button--selected:hover path {
+    stroke: #1e6a8e;
+  }
+
+  .option__button:hover::after,
+  .option__button:hover::before,
+  .option__button--selected:hover::after,
+  .option__button--selected:hover::before {
+    background: #1e6a8e;
+  }
+}
+
+@media only screen and (max-width: 1180px) {
+  .option__button,
+  .option__button--selected,
+  .option__button:nth-child(odd),
+  .option__button--selected:nth-child(odd) {
+    margin: auto;
+  }
+
+  .option__button svg,
+  .option__button--selected svg {
+    height: 56px;
+    width: 288px;
+  }
+
+  .option__line,
+  .option__line--selected {
+    width: 100%;
+    height: 1px;
+    position: fixed;
+    left: 0;
+    z-index: 0;
+  }
+
+  .option__line {
+    background: #d0d0d8;
+  }
+
+  .option__line--selected {
+    background: #ff8b37;
+  }
+
+  .option__line--correct {
+    background: #47d867;
+  }
+
+  .option__line--wrong {
+    background: #ec6259;
+  }
+
+  .option__button::after,
+  .option__button::before,
+  .option__button--selected::after,
+  .option__button--selected::before {
+    display: none;
+  }
+}
