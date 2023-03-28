@@ -6,8 +6,6 @@ import Finish from "./pages/Finish";
 
 import { LINKS } from "./constants";
 
-import "./App.css";
-
 function App() {
   return (
     <>
